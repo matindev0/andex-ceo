@@ -1,0 +1,8 @@
+# Aria Bot — Python Dependencies
+
+# Install with: pip install -r requirements.txt
+
+discord.py>=2.4.0
+google-generativeai>=0.7.0
+aiohttp>=3.9.0
+Pillow>=10.0.0
