@@ -144,5 +144,14 @@ class GeminiEngine:
     async def generate_versioned_build(
         self, project_name: str, version: int, channel_snapshot: str, previous_summary: str = ""
     ) -> str:
+        # لێرە کێشەی کەوانەکە چاککراوە
         prompt = (
-            f"## پرۆژە: {project_name} | Version {
+            f"## پڕۆژە: {project_name} | Version {version}\n\n"
+            f"کورتەی پێشوو: {previous_summary}\n\n"
+            f"Snapshot ی چاتەکە:\n{channel_snapshot}\n\n"
+            "تکایە کۆدی نوێ و تەواو دروست بکە بەپێی ئەم زانیارییانە."
+        )
+        return await self.quick(prompt)
+
+# --- زۆر گرنگە: دروستکردنی گۆڕدراوی engine بۆ ئەوەی لە فایلەکانی تر بناسرێت ---
+engine = GeminiEngine()
